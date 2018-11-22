@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "847c8a61-f1e0-4559-88e0-daab14a8f848",
+		"name": "Assets",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API",
+			"item": [
+				{
+					"name": "Create Asset",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "ShopName",
+								"value": "{{ShopName}}",
+								"type": "text"
+							},
+							{
+								"key": "ShopperId",
+								"value": "{{ShopperId}}",
+								"type": "text"
+							},
+							{
+								"key": "Language",
+								"value": "{{Language}}",
+								"type": "text"
+							},
+							{
+								"key": "Currency",
+								"value": "{{Currency}}",
+								"type": "text"
+							},
+							{
+								"key": "Environment",
+								"value": "{{Environment}}",
+								"type": "text"
+							},
+							{
+								"key": "GeoLocation",
+								"value": "{{GeoLocation}}",
+								"type": "text"
+							},
+							{
+								"key": "CustomerId",
+								"value": "{{CustomerId}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{SitecoreIdToken}}",
+								"type": "text"
+							},
+							{
+								"key": "PolicyKeys",
+								"value": "ZeroMinionDelay",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":\"asset1\", \"name\": \"Asset 1\", \"displayname\": \"Asset 1\"}"
+						},
+						"url": {
+							"raw": "{{ServiceHost}}/{{ShopsApi}}/CreateAsset()",
+							"host": [
+								"{{ServiceHost}}"
+							],
+							"path": [
+								"{{ShopsApi}}",
+								"CreateAsset()"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Associate Asset to parent",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "ShopName",
+								"type": "text",
+								"value": "{{ShopName}}"
+							},
+							{
+								"key": "ShopperId",
+								"type": "text",
+								"value": "{{ShopperId}}"
+							},
+							{
+								"key": "Language",
+								"type": "text",
+								"value": "{{Language}}"
+							},
+							{
+								"key": "Currency",
+								"type": "text",
+								"value": "{{Currency}}"
+							},
+							{
+								"key": "Environment",
+								"type": "text",
+								"value": "{{Environment}}"
+							},
+							{
+								"key": "GeoLocation",
+								"type": "text",
+								"value": "{{GeoLocation}}"
+							},
+							{
+								"key": "CustomerId",
+								"type": "text",
+								"value": "{{CustomerId}}"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{SitecoreIdToken}}"
+							},
+							{
+								"key": "PolicyKeys",
+								"type": "text",
+								"value": "ZeroMinionDelay"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"catalogid\":\"Entity-Catalog-Habitat_Master\", \"parentid\": \"Entity-SellableItem-6042064\", \"referenceid\": \"Entity-Asset-asset1\"}"
+						},
+						"url": {
+							"raw": "{{ServiceHost}}/{{ShopsApi}}/AssociateAssetToParent()",
+							"host": [
+								"{{ServiceHost}}"
+							],
+							"path": [
+								"{{ShopsApi}}",
+								"AssociateAssetToParent()"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
